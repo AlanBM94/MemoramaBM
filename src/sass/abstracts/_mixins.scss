@@ -1,0 +1,47 @@
+@mixin contenedorVerde {
+    border: .2rem solid $color-verde-primario;
+    padding: 1rem;
+}
+
+@mixin centrarGridItems{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+@mixin gradienteTexto {
+    display: inline-block;
+    background-image: linear-gradient(to right bottom, $color-verde-gradiente-temporizador, $color-verde-gradiente);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin botonActivo {
+    background-color: transparent;
+    color: $color-verde-primario;
+    border: .2rem solid $color-verde-primario;
+}
+
+@mixin btn {
+    background-color: $color-verde-primario;
+    color: $color-blanco;
+    font-weight: 400;
+}
+
+@mixin responsive($breakpoint){
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em){@content}; //600px
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em){@content}; //900px
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em){@content}; //1200px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media only screen and (max-width: 112.5em){@content}; //1800px
+    }
+}

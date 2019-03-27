@@ -1,0 +1,45 @@
+.btn{
+    width: 70%;
+    padding: 1rem .5rem;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.8rem;
+    letter-spacing: .2rem;
+
+    // @include responsive(tab-port){
+    //     font-size: 1.5rem;
+    // }
+    
+    &:hover{
+        cursor: pointer;
+    }
+
+    &--jugar {
+        @include btn;
+        
+        &--2{
+            @include btn;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            visibility: hidden;
+
+            &:focus{
+                outline: none;
+            }
+        }
+        
+        &--activo{
+            @include botonActivo;
+        }
+
+        &:focus{
+            outline: none;
+        }
+
+    }
+}
+
+.btn-invisible{
+    // display: none;
+}

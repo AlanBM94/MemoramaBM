@@ -1,0 +1,77 @@
+.formulario {
+    height: 100%;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+    width: 100%;
+    @include centrarGridItems;
+    
+    &__nombre, &__tiempo {
+        background: transparent;
+        border: none;
+        border-bottom: .1rem solid $color-verde-primario;
+        color: $color-verde-primario;
+        width: 90%;
+
+        // @include responsive(tab-port){
+        //     font-size: 1.2rem;
+        // }
+    }
+    
+    &__nombre:focus {
+        outline: none;
+    }
+    
+    &__nombre {
+        grid-row: 1 / 2;
+        height: 30%;
+        align-content: center;
+        text-align: center;
+        color: $color-verde-primario;
+        
+        &::placeholder {
+            color: $color-verde-primario;
+        }
+    }
+
+        
+        &__tiempo {
+            position: relative;
+            
+            & select {
+                background: $color-verde-select;
+                color: $color-verde-primario;
+                height: 30%;
+                border: none;
+                -webkit-appearance: button;
+                outline: none;
+                position: relative;
+                width: 100%;
+                
+                // @include responsive(tab-port){
+                //     font-size: 1.2rem;
+                // }
+            }
+            
+            &:after {
+                content: '\2207';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 10%;
+                height: 100%;
+                line-height: 50%;
+                color: $color-verde-primario;
+                pointer-events: none;
+                font-size: 1.8rem;
+
+                // @include responsive(tab-port){
+                //     font-size: 1.2rem;
+                // }
+                
+            }
+
+
+    }
+    
+    
+}

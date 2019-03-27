@@ -1,0 +1,38 @@
+.lista-puntajes {
+    padding: 2rem;
+    // background-color: yellow;
+    list-style: none;
+
+    @include responsive(tab-land){
+        padding: 0;
+    }
+    
+    &__items {
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        color: $color-verde-primario;
+        font-size: 1.6rem;
+        font-weight: 300;
+        animation: fadeInRight .4s linear;
+        & a {
+            text-decoration: none;
+            padding: 2px;
+            color: $color-blanco;
+            margin-left: 2px;
+            opacity: 0.6;
+            transition: 0.3s all;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        
+        & span {
+            font-weight: 400;
+            color: $color-verde-primario-claro;
+        }
+    }
+    &__items:not(:first-child){
+        margin-top: 2rem;
+        
+    }
+}

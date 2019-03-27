@@ -1,0 +1,50 @@
+.titulo {
+    font-size: 2rem;
+    color: $color-blanco;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    // @include responsive(tab-port){
+    //     font-size: 1.5rem;
+    // }
+    
+    &--memorama{
+        position: relative;
+
+        &::after {
+            content: 'BM';
+            position: absolute;
+            top: 0;
+            left: 100;
+            font-size: 1rem;
+            color: $color-verde-primario;
+            font-weight: 400;
+
+            // @include responsive(tab-port){
+            //     font-size: .7rem;
+            // }
+        }
+
+    }
+}
+
+.puntaje {
+    color: $color-verde-primario;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    animation: zoomIn .4s linear;
+
+    & span{
+        font-weight: 400;
+    }
+}
+
+.gop{
+    @include gradienteTexto;
+    font-size: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    animation: zoomIn .4s linear;
+}

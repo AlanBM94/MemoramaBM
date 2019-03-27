@@ -1,0 +1,31 @@
+{
+  "name": "memoramabm",
+  "version": "1.0.0",
+  "description": "memorama cool",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "built": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open",
+    "compile-sass" : "node-sass src/sass/main.scss src/css/estilos.css -w"
+  },
+  "author": "Alan",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}

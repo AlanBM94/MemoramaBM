@@ -1,0 +1,82 @@
+.carta {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    width: 70%;
+    height: 70%;
+
+    // @include responsive(tab-land){
+    //     width: 7rem;
+    //     height: 5rem;
+    // }
+
+    &__label {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        
+    }
+
+    &__lado {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+        transition: all .3s ease;
+        // background-color: red;
+
+        &--front {
+
+        }
+
+        &--back {
+            position: relative;
+            transform: rotateY(180deg);
+            &::after{
+                position: absolute;
+                content: ' ';
+                width: 100%;
+                height: 100%;
+                background-color: $color-verde-primario;
+                top: 0;
+                left: 0;
+                opacity: 0.6;
+
+            }
+        }
+    }
+
+    // &:hover &__lado--front{
+    //     transform: rotateY(-180deg);
+    // }
+
+    // &:hover &__lado--back{
+    //     transform: rotateY(0);
+    // }
+    
+    &__icono {
+        width: 100%;
+        height: 100%;
+        stroke: $color-verde-primario;
+        stroke-width: .1rem;
+        fill: transparent;
+        border: .2rem solid $color-verde-primario;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__imagen {
+        width: 100%;
+        height: 100%;
+    }
+
+    
+
+}
+

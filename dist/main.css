@@ -1,0 +1,237 @@
+@-webkit-keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1; }
+  25%,
+  75% {
+    opacity: 0; } }
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1; }
+  25%,
+  75% {
+    opacity: 0; } }
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  background-image: linear-gradient(to right bottom, #000, #16572E);
+  height: 100vh;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: [inicio-principal] 20% [fin-principal inicio-cartas] 60% [fin-cartas inicio-puntaje] 20% [fin-puntaje];
+  font-family: 'Lato', sans-serif; }
+
+.titulo {
+  font-size: 2rem;
+  color: #ffff;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+  .titulo--memorama {
+    position: relative; }
+    .titulo--memorama::after {
+      content: 'BM';
+      position: absolute;
+      top: 0;
+      left: 100;
+      font-size: 1rem;
+      color: #30C566;
+      font-weight: 400; }
+
+.puntaje {
+  color: #30C566;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase; }
+  .puntaje span {
+    font-weight: 400; }
+
+.gop {
+  display: inline-block;
+  background-image: linear-gradient(to right bottom, #00ff91, #16572E);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3.5rem;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+.btn {
+  width: 70%;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  border: none;
+  font-size: 2rem;
+  letter-spacing: .2rem; }
+  .btn:hover {
+    cursor: pointer; }
+  .btn--jugar {
+    background-color: #30C566;
+    color: #ffff;
+    font-weight: 400; }
+
+.carta__btn {
+  display: none; }
+
+.carta__signo {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #30C566;
+  stroke-width: 1px;
+  border: 0.2rem solid #30C566; }
+
+.formulario {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 0.5rem;
+  align-items: center; }
+  .formulario__nombre, .formulario__tiempo {
+    background: transparent;
+    border: none;
+    border-bottom: 0.1rem solid #30C566;
+    color: #30C566; }
+  .formulario__nombre {
+    grid-row: 1 / 2;
+    height: 30%;
+    align-content: center;
+    text-align: center;
+    color: #30C566; }
+    .formulario__nombre::placeholder {
+      color: #30C566; }
+  .formulario__tiempo {
+    grid-row: 2/-1;
+    height: 30%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    background: #05130a; }
+
+.lista-puntajes {
+  padding: 2rem;
+  list-style: none; }
+  .lista-puntajes__items {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: #30C566;
+    font-size: 1.6rem;
+    font-weight: 300;
+    animation: fadeInRight .4s linear; }
+    .lista-puntajes__items span {
+      font-weight: 400; }
+  .lista-puntajes__items:not(:first-child) {
+    margin-top: 2rem; }
+
+.temporizador {
+  font-size: 12rem;
+  font-weight: 300;
+  color: #30C566;
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(to right bottom, #00ff91, #16572E);
+  -webkit-background-clip: text;
+  color: transparent; }
+  .temporizador::after {
+    content: 's';
+    position: absolute;
+    font-size: 5rem;
+    top: 0;
+    left: 100;
+    background-image: linear-gradient(to right bottom, #00ff91, #16572E);
+    -webkit-background-clip: text;
+    color: transparent; }
+
+.contenedor-central {
+  padding: 2rem 3rem;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-rows: [inicio-cartas] 60% [fin-cartas inicio-gop] 15% [fin-gop inicio-puntaje] 15% [fin-puntaje];
+  justify-items: center; }
+  .contenedor-central__contenedor-cartas {
+    display: grid;
+    grid-template-columns: repeat(5, 10rem);
+    grid-template-rows: repeat(4, 7rem);
+    grid-gap: 1rem;
+    padding: 3rem;
+    width: 80%; }
+  .contenedor-central__puntaje {
+    width: 50%;
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+  .contenedor-central__gop {
+    width: 50%;
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+
+.contenedor-principal {
+  border: 0.2rem solid #30C566;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: [inicio-nombre] 10% [fin-nombre inicio-formulario] 35% [fin-formulario inicio-tiempo] 35% [fin-tiempo inicio-btn-jugar] 20% [final-btn-jugar]; }
+  .contenedor-principal__titulo {
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+  .contenedor-principal__formulario {
+    padding: 2rem; }
+  .contenedor-principal__temporizador {
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+  .contenedor-principal__boton {
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+
+.contenedor-puntajes {
+  border: 0.2rem solid #30C566;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: [inicio-nombre-puntaje] 10% [fin-nombre-puntaje inicio-puntajes] 40% [fin-puntajes]; }
+  .contenedor-puntajes__titulo {
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+  .contenedor-puntajes__puntajes {
+    display: grid;
+    align-items: center;
+    justify-items: center; }
+

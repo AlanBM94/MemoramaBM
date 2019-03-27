@@ -1,0 +1,18 @@
+.iconoFin{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icono {
+        fill: transparent;
+        width: 100%;
+        height: 100%;
+        stroke: $color-verde-primario;
+        animation: zoomIn .4s linear;
+    }
+}

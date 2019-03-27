@@ -1,0 +1,29 @@
+.contenedor-central {
+    padding: 2rem 3rem;
+    display: grid;
+    grid-template-rows: [inicio-cartas] 60% [fin-cartas inicio-gop] 15% [fin-gop inicio-puntaje] 15% [fin-puntaje];
+    justify-items: center;
+    &__contenedor-cartas {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(5rem, auto);
+        padding: 1rem;
+        width: 100%;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        
+    }
+
+    
+    &__puntaje {
+        width: 50%;
+        @include centrarGridItems;
+    }
+
+    &__gop {
+        width: 50%;
+        @include centrarGridItems;
+        
+    }
+}

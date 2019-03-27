@@ -1,0 +1,28 @@
+.temporizador {
+    font-size: 10rem;
+    font-weight: 300;
+    color: $color-verde-primario;
+    position: relative;
+    @include gradienteTexto;
+    // animation: flash 1.5s infinite linear;
+
+    // @include responsive(tab-port){
+    //     font-size: 7rem;
+    // }
+
+    &::after {
+        content: 's';
+        position: absolute;
+        font-size: 3rem;
+        top: 0;
+        left: 100;
+        background-image: linear-gradient(to right bottom, $color-verde-gradiente-temporizador, $color-verde-gradiente);
+        -webkit-background-clip: text;
+        color: transparent;
+
+        // @include responsive(tab-port){
+        //     font-size: 2rem;
+        // }
+    }
+    
+}
