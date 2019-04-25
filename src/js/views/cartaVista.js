@@ -27,7 +27,7 @@ export const cartasVolteadas = () => {
 const lados = () => {
     var cantidadNumeros = 10;
     var myArray = []
-    while(myArray.length < cantidadNumeros ){
+    while(myArray.length < cantidadNumeros){
     var numeroAleatorio = Math.ceil(Math.random()*cantidadNumeros);
     var existe = false;
     for(var i=0;i<myArray.length;i++){

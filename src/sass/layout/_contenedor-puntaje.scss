@@ -3,6 +3,11 @@
     display: grid;
     grid-template-rows: [inicio-nombre-puntaje] 10% [fin-nombre-puntaje inicio-puntajes] 40% [fin-puntajes];
     justify-items: center;
+
+    @include responsive(tab-port){
+        display: none;
+    }
+    
     &__titulo {
         @include centrarGridItems;
         width: 90%;

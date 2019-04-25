@@ -3,12 +3,27 @@
     font-weight: 300;
     color: $color-verde-primario;
     position: relative;
+
     @include gradienteTexto;
     // animation: flash 1.5s infinite linear;
 
     // @include responsive(tab-port){
     //     font-size: 7rem;
     // }
+    &--responsive {
+        display: none;
+        font-size: 8rem;
+    }
+
+    @include responsive(tab-port){
+        &--responsive {
+            display: block;
+            grid-area: tiempo;
+            justify-self: center;
+            align-self: center;
+        }
+
+    }
 
     &::after {
         content: 's';

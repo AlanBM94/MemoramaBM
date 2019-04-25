@@ -8,7 +8,22 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <title>MemoramaBM</title>
 <link href="main.css" rel="stylesheet"></head>
-<body>
+<body id="main">
+    <!-- Menú responsivo -->
+    <div class="menu-responsivo">
+        <h1 class="menu-responsivo__titulo">memorama</h1>
+        <input type="checkbox" class="menu-responsivo__input" id="navi-toggle">
+        <label for="navi-toggle" class="menu-responsivo__btn">
+            <span class="menu-responsivo__icono">&nbsp;</span>
+        </label>
+        <!-- Contenedor del menú -->
+        <div class="menu-responsivo__contenedor">
+
+            
+        </div>
+        <button class="btn btn--reiniciar btn--reiniciar--responsive">reiniciar</button>
+    </div>
+    <!-- Menú principal -->
     <div class="contenedor-principal">
         <div class="contenedor-principal__titulo">
             <h1 class="titulo titulo--memorama">memorama</h1>
@@ -16,208 +31,384 @@
         <div class="contenedor-principal__formulario">
             <form action="#" class="formulario">
                 <input type="text" class="formulario__nombre" placeholder="nombre">
-                <select name="tiempo" id="" class="formulario__tiempo">
-                    <option value="">10s</option>
-                    <option value="">20s</option>
-                    <option value="">30s</option>
-                    <option value="">40s</option>
-                    <option value="">50s</option>
-                </select>
-
+                <div class="formulario__tiempo">
+                    <select name="tiempo" id="" >
+                        <option value="20">20s</option>
+                        <option value="30">30s</option>
+                        <option value="40">40s</option>
+                        <option value="50">50s</option>
+                        <option value="60">60s</option>
+                    </select>
+                </div>
             </form>
         </div>
-        <div class="contenedor-principal__temporizador">
-            <h2 class="temporizador">60</h2>
-
+        <div class="contenedor-principal__temporizador ">
+            <h2 class="temporizador ">0</h2>
         </div>
+       
         <div class="contenedor-principal__boton">
             <button class="btn btn--jugar">jugar</button>
-
+            <button class="btn btn--jugar--2">reiniciar</button>
         </div>
-        
+
     </div>
+    <!-- Contenedor de tarjetas -->
     <div class="contenedor-central">
         <div class="contenedor-central__contenedor-cartas">
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear1">
-                <label for="cartaVoltear1" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear2">
-                <label for="cartaVoltear2" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear3">
-                <label for="cartaVoltear3" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear4">
-                <label for="cartaVoltear4" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear5">
-                <label for="cartaVoltear5" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear6">
-                <label for="cartaVoltear6" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear7">
-                <label for="cartaVoltear7" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear8">
-                <label for="cartaVoltear8" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear9">
-                <label for="cartaVoltear9" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear10">
-                <label for="cartaVoltear10" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear11">
-                <label for="cartaVoltear11" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear12">
-                <label for="cartaVoltear12" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear13">
-                <label for="cartaVoltear13" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear14">
-                <label for="cartaVoltear14" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear15">
-                <label for="cartaVoltear15" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear16">
-                <label for="cartaVoltear16" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear17">
-                <label for="cartaVoltear17" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear18">
-                <label for="cartaVoltear18" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                <input type="checkbox" class="carta__btn" id="cartaVoltear19">
-                <label for="cartaVoltear19" class="carta__pregunta">
-                    <svg class="carta__signo">
-                        <use xlink:href="img/symbol-defs.svg#icon-help"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="contenedor-central__contenedor-cartas__carta carta">
-                    <input type="checkbox" class="carta__btn" id="cartaVoltear20">
-                    <label for="cartaVoltear20" class="carta__pregunta">
-                        <svg class="carta__signo">
+            <!-- Carta -->
+            <div class="carta" id="cartaBtn-1">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-1" class="carta__input">
+                    <label for="carta-1" class="carta__label">
+                        <svg class="carta__icono">
                             <use xlink:href="img/symbol-defs.svg#icon-help"></use>
                         </svg>
                     </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
             </div>
+            <div class="carta" id="cartaBtn-2">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-2" class="carta__input">
+                    <label for="carta-2" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-3">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-3" class="carta__input">
+                    <label for="carta-3" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-4">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-4" class="carta__input">
+                    <label for="carta-4" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-5">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-5" class="carta__input">
+                    <label for="carta-5" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-6">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-6" class="carta__input">
+                    <label for="carta-6" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-7">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-7" class="carta__input">
+                    <label for="carta-7" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-8">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-8" class="carta__input">
+                    <label for="carta-8" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-9">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-9" class="carta__input">
+                    <label for="carta-9" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-10">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-10" class="carta__input">
+                    <label for="carta-10" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-11">
+                    <!-- Lado frontal de la carta -->
+                    <div class="carta__lado carta__lado--front" id="carta-1">
+                        <input type="checkbox" id="carta-1" class="carta__input">
+                        <label for="carta-1" class="carta__label">
+                            <svg class="carta__icono">
+                                <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                            </svg>
+                        </label>
+                    </div>
+                    <!-- Lado trasero de la carta -->
+                    <div class="carta__lado carta__lado--back" id="carta-1">
+                        <img src=""  alt="" class="carta__imagen">
+                    </div>
+            </div>
+            <div class="carta" id="cartaBtn-12">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-2" class="carta__input">
+                    <label for="carta-2" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src="" alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-13">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-3" class="carta__input">
+                    <label for="carta-3" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src="" alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-14">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-4" class="carta__input">
+                    <label for="carta-4" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-15">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-5" class="carta__input">
+                    <label for="carta-5" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src="" alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-16">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-6" class="carta__input">
+                    <label for="carta-6" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src="" alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-17">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-7" class="carta__input">
+                    <label for="carta-7" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src="" alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-18">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-8" class="carta__input">
+                    <label for="carta-8" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src="" alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-19">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-9" class="carta__input">
+                    <label for="carta-9" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src=""  alt="" class="carta__imagen">
+                </div>
+            </div>
+            <div class="carta" id="cartaBtn-20">
+                <!-- Lado frontal de la carta -->
+                <div class="carta__lado carta__lado--front">
+                    <input type="checkbox" id="carta-10" class="carta__input">
+                    <label for="carta-10" class="carta__label">
+                        <svg class="carta__icono">
+                            <use xlink:href="img/symbol-defs.svg#icon-help"></use>
+                        </svg>
+                    </label>
+                </div>
+                <!-- Lado trasero de la carta -->
+                <div class="carta__lado carta__lado--back">
+                    <img src="" alt="" class="carta__imagen">
+                </div>
+            </div>
+            <!-- <div class="iconoFin">
+                <svg class="iconoFin__icono">
+                    <use xlink:href="img/symbol-defs.svg#icon-happy"></use>
+                </svg>
+            </div> -->
         </div>
-        <div class="contenedor-central__puntaje">
+        <!-- <div class="contenedor-central__puntaje">
             <h3 class="puntaje">tu puntaje es <span>2000</span></h3>
         </div>
         <div class="contenedor-central__gop">
             <h3 class="gop">ganaste!</h3>
-        </div>
+        </div> -->
     </div>
+    <!-- Mejores puntajes -->
     <div class="contenedor-puntajes">
         <div class="contenedor-puntajes__titulo">
             <h1 class="titulo titulo--puntajes">mejores puntajes</h1>
         </div>
         <div class="contenedor-puntajes__puntajes">
             <ul class="lista-puntajes">
-                <li class="lista-puntajes__items">Alan-<span>2000</span></li>
-                <li class="lista-puntajes__items">Pablo-<span>1800</span></li>
-                <li class="lista-puntajes__items">Sus-<span>1700</span></li>
+                <!-- <li class="lista-puntajes__items">Alan-<span>2000</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li>
+                <li class="lista-puntajes__items">Pablo-<span>1800</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li>
+                <li class="lista-puntajes__items">Sus-<span>1700</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li> -->
             </ul>
         </div>
     </div>
+    <!-- popup -->
+    <div class="popup" id="popup">
+        <!-- <div class="popup__btn">
+            <a href="#main">X</a>
+        </div>
+        <div class="popup__content">
+            <div class="popup__titulo">
+                <h3 class="titulo">Información del jugador</h3>
+            </div>
+            <div class="popup__info">
+                <ul class="info">
+                    <li class="info__items">Nombre del jugador: <span>Alan</span></li>
+                    <li class="info__items">Tiempo record: <span>40s</span></li>
+                    <li class="info__items">Puntaje: <span>2,000</span></li>
+                    <li class="info__items">Fecha de la partida: <span>10 de Febrero de 2018</span></li>
+                </ul>
+            </div>
+
+        </div> -->
+    </div>
+    <!-- Elementos de el juego Responsivo -->
+    <h2 class="temporizador temporizador--responsive">0</h2>
+    <ul class="lista-puntajes lista-puntajes--responsive">
+        <!-- <li class="lista-puntajes__items">Alan-<span>2000</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li>
+        <li class="lista-puntajes__items">Pablo-<span>1800</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li>
+        <li class="lista-puntajes__items">Sus-<span>1700</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li> -->
+    </ul>
     
 <script type="text/javascript" src="js/bundle.js"></script></body>
 </html>

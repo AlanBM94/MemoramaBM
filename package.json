@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
-    "built": "webpack --mode production",
+    "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
     "compile-sass" : "node-sass src/sass/main.scss src/css/estilos.css -w"
   },

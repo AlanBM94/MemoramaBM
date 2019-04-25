@@ -14,6 +14,20 @@ export const limpiarInputs = () => {
     elementos.formularioContenido[0].value = '';
     elementos.formularioContenido[1].value = '';
 }
+//Obtiene los datos responsive
+export const obtenerDatosJugadorResponsive = elemento => {
+    const datos = {
+        'nombre': elemento[1].value,
+        'tiempo': elemento[3].children[0].value
+    }
+    return datos;
+}
+
+//Función que limpia los inputs
+export const limpiarInputsResponsive = elemento => {
+    elemento.parentElement.children[3].children[0].value = '';
+    elemento.parentElement.children[3].children[1].children[0].value = '';
+}
 
 //Función que muestra los mensajes de que el jugador ha ganado
 export const mostrarMensajes = puntaje => {

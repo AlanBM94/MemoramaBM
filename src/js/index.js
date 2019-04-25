@@ -5,7 +5,7 @@ import Temporizador from './models/temporizador';
 import Carta from './models/carta';
 import Par from './models/par';
 import Puntajes from './models/puntaje';
-import {elementos, btnReiniciar} from './views/base';
+import {elementos, btnReiniciar, activarMenuResponsive, btnResponsivo, mostrarElementoPopUp, eliminarElementoPopUp} from './views/base';
 import * as jugadorVista from './views/jugadorVista';
 import * as temporizadorVista from './views/temporizadorVista';
 import * as cartaVista from './views/cartaVista';
@@ -23,6 +23,7 @@ const estado = {
     'fin': () => {
         temporizadorVista.desactivarTemporizador();
         temporizadorVista.mostrarIconoGanar();
+        btnResponsivo();
     },
     'reiniciar': () => {
         temporizadorVista.eliminarIconoYMensajesPerdida();
@@ -40,19 +41,36 @@ const estado = {
 // ---------------------Controladores----------------------
 
 // Controlador de los datos del jugador
-const controladorJugador = () => {
-    const datos = jugadorVista.obtenerDatosJugador();
-    if(elementos.formularioContenido[0].value == '' || elementos.formularioContenido[1].value == ''){
-        alert('Ingresa tu nombre y tiempo de la partida');
-    }else if(elementos.formularioContenido[0].value.length > 8){
-        alert('El nombre no puede tener más de 8 caracteres');
+const controladorJugador = elemento => {
+    if(elemento){
+        const datos = jugadorVista.obtenerDatosJugador();
+        if((elemento.nombre == '' || elemento.tiempo == '')){
+            alert('Ingresa tu nombre y tiempo de la partida');
+        }else if((elemento.nombre.length > 8)){
+            alert('El nombre no puede tener más de 8 caracteres');
+        }
+        else{
+            estado.inicio = true;
+            cartaVista.reordenarCartas();
+            // Crea una nueva instancia de la clase Jugador
+            estado.nuevoJugador = new Jugador(elemento.nombre, elemento.tiempo);
+            estado.jugadores.push(estado.nuevoJugador);
+        }
+        
     }
     else{
-        estado.inicio = true;
-        cartaVista.reordenarCartas();
-        // Crea una nueva instancia de la clase Jugador
-        estado.nuevoJugador = new Jugador(datos.nombre, datos.tiempo);
-        estado.jugadores.push(estado.nuevoJugador);
+        const datos = jugadorVista.obtenerDatosJugador();
+        if((elementos.formularioContenido[0].value == '' || elementos.formularioContenido[1].value == '')){
+            alert('Ingresa tu nombre y tiempo de la partida');
+        }else if((elementos.formularioContenido[0].value.length > 8)){
+            alert('El nombre no puede tener más de 8 caracteres');
+        }else{
+            estado.inicio = true;
+            cartaVista.reordenarCartas();
+            // Crea una nueva instancia de la clase Jugador
+            estado.nuevoJugador = new Jugador(datos.nombre, datos.tiempo);
+            estado.jugadores.push(estado.nuevoJugador);
+        }
     }
     
 }
@@ -109,7 +127,6 @@ const controladorPar = () => {
             estado.par.parArreglo = [];
             //Cada par que es correcto lo agrega al estado.ganar
             estado.ganar.push(parCorrecto);
-            // console.log(estado.ganar);
             
             //Si el atributo del objeto ganar tiene un arreglo con 10 elementos se termina el juego
             if(estado.ganar.length == 10){
@@ -142,7 +159,6 @@ const controladorPar = () => {
                 }, 1000);
                 //Muestra el botón de reiniciar en el DOM
                 btnReiniciar();
-                console.log(estado);
             }
             //Si las cartas no son iguales hace el siguiente proceso
         }else{
@@ -224,32 +240,26 @@ window.addEventListener('load', () => {
 //Evento que se dispara cuando le das click a los puntajes 
 elementos.contenedorPuntajes.addEventListener('click', e =>{
     e.preventDefault();
-    if(e.target.matches('.lista-puntajes__items--ver')){
-        const id = e.target.parentElement.id.split('-');
-        //Muestra el popup con la información del jugador en el que se dio click
-        const puntajeIndice = estado.puntaje.leerStorage().findIndex(elemento => {
-            if(elemento.fecha == id[0] && elemento.hora == id[1]){
-                return elemento;
-            }
-        })
-        //Leé el jugador del LS
-        puntajeVista.mostrarDetalles(estado.puntaje.leerStorage()[puntajeIndice]);
-        //Activa el popup
-        puntajeVista.togglePopup(1);
+    mostrarElementoPopUp(e, estado, puntajeVista);
+})
 
-    }
+//Evento que se dispara cuando le das click a los puntajes responsive
+elementos.listaPuntajes[1].addEventListener('click', e => {
+    e.preventDefault();
+    mostrarElementoPopUp(e, estado, puntajeVista);
 })
 
 //Evento que se dispara cuando se elimina un puntaje de la lista de los mejores puntajes
 elementos.contenedorPuntajes.addEventListener('click', e => {
     e.preventDefault();
-    if(e.target.matches('.lista-puntajes__items--eliminar')){
-        const item = e.target.parentElement;
-        //Elimina el jugador del DOM
-        item.parentElement.removeChild(item);
-        //Elimina el jugador de local storage
-        estado.puntaje.deleteStorage(item.id);
-    }
+    eliminarElementoPopUp(e, estado);
+})
+
+//Evento que se dispara cuando se elimina un puntaje de la lista responsive
+elementos.listaPuntajes[1].addEventListener('click', e => {
+    e.preventDefault();
+    eliminarElementoPopUp(e, estado);
+    
 })
 
 //Evento que se dispara cuando se cierra el popup
@@ -259,6 +269,46 @@ elementos.popup.addEventListener('click', e => {
         //Desactiva el popup
         puntajeVista.togglePopup(0);
     }
+})
+
+//Menú responsivo
+elementos.btn_responsive.addEventListener('click', () => {
+    activarMenuResponsive();
+    // console.log(elementos.contenedorResponsivo.childNodes);
+})
+
+//El jugador hace click en el boton de jugar responsive
+elementos.contenedorResponsivo.addEventListener('click', e => {
+    e.preventDefault();
+    //si el target hace match con el boton jugar
+    if(e.target.matches('.btn--jugar--responsive')){
+        controladorJugador(jugadorVista.obtenerDatosJugadorResponsive(elementos.contenedorResponsivo.childNodes));
+        //Si el nuevo jugador tiene un tiempo establecido se llama el controlador temporizador
+        if(estado.inicio){
+            elementos.contenedorResponsivo.style.display = 'none';
+            if(estado.nuevoJugador.tiempo !== ''){
+                controladorTemporizador();
+            }
+        }
+    }
+})
+//Reinicia el juego Responsive
+elementos.btnReiniciarResponsive.addEventListener('click', e => {
+    e.preventDefault();
+    estado.reiniciar();
+    elementos.btnReiniciarResponsive.style.display = 'none';
+    elementos.contenedorResponsivo.style.display = 'grid';
+    jugadorVista.limpiarInputsResponsive(e.target);
+    document.querySelector('.menu-responsivo__btn').style.display = 'inline-block';
+    //desactiva el inicio del juego
+    estado.inicio = false;
+    //Agrega el 0 al temporizador en el DOM
+    elementos.temporizadorResponsive.innerHTML = 0;
+    //Pone el estado del nuevo jugaor en falso
+    estado.nuevoJugador = false;
+    //Resetea el arreglo para ganar
+    estado.ganar = [];
+
 })
 
 

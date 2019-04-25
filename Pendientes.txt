@@ -1,2 +1,0 @@
-Guardar los jugadores en el local storage
-Mostrar solo los 3 mejores puntajes

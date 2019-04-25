@@ -1,15 +1,23 @@
 import {elementos} from './base';
 
+//Limpia los puntajes del DOM
+export const limpiarPuntajes = () => {
+    elementos.listaPuntajes.map(elemento => {
+        elemento.innerHTML = '';
+    })
 
-export const limpiarPuntajes = () => elementos.listaPuntajes.innerHTML = '';
+}
 
+//Muestra el puntaje en el DOM
 export const mostrarPuntajes = jugador => {
     const markup = `
     <li class="lista-puntajes__items" id="${jugador.fecha}-${jugador.hora}">${jugador.nombre}-<span>${jugador.puntaje}</span><a class="lista-puntajes__items--ver" href="#popup">&#9737;</a><a class="lista-puntajes__items--eliminar" href="#">&#215;</a></li>
     `;
-    elementos.listaPuntajes.insertAdjacentHTML('beforeend', markup);
+    elementos.listaPuntajes.map(elemento => {
+        elemento.insertAdjacentHTML('beforeend', markup)
+    })
 }
-
+//Muestra los detalles en el popup de el jugador
 export const mostrarDetalles = jugador => {
     const markup = `
     <div class="popup__btn">
@@ -34,7 +42,7 @@ export const mostrarDetalles = jugador => {
     elementos.popup.innerHTML = markup;
 }
 
-
+//Activa y desactiva el popup
 export const togglePopup = btn => {
     if(btn == 1){
         document.querySelector('.popup').style.opacity = '1';

@@ -31,6 +31,22 @@ body {
     display: grid;
     grid-template-columns: [inicio-principal] 20% [fin-principal inicio-cartas] 60% [fin-cartas inicio-puntaje] 20% [fin-puntaje];
     font-family: 'Lato', sans-serif;
+
+
+    @include responsive(tab-port){
+        padding: 0;
+        display: grid;
+        grid-template-columns: 0;
+        grid-template-areas: 
+        'header header'
+        'puntajes puntajes'
+        'cartas cartas'
+        'cartas cartas'
+        'cartas cartas'
+        'tiempo tiempo'
+        'info info';
+    }
+
     
     
 }

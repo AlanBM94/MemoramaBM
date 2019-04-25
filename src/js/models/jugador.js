@@ -26,7 +26,7 @@ export default class Jugador{
             if(hora.segundos < 10) hora.segundos = `0${hora.segundos}`
             return hora;
         }
-
+        //Formatea la fecha
         this.fecha = {
             'dia': this.fecha.getDate(),
             'mes': mesNombre(this.fecha.getMonth()),

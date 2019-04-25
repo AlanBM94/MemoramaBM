@@ -1,4 +1,4 @@
-import {elementos, btnReiniciar} from './base';
+import {elementos, btnReiniciar, btnResponsivo} from './base';
 
 //Variable que va a llevar el proceso del temporizador
 let temporizadorCorriendo;
@@ -30,7 +30,7 @@ const mostrarMensajesPerder = () => {
 
 
 //Muestra el temporizador en el DOM
-export const mostrarTiempo = tiempo => {
+export const mostrarTiempo = tiempo=> {
     let contador = 0;
     let param = 0;
     const tiempoMax = parseInt(tiempo) + 1;
@@ -46,17 +46,22 @@ export const mostrarTiempo = tiempo => {
             elementos.btnJugar.classList.add('btn--jugar--activo');
             //Muestra en el dom el valor actual del contador
             elementos.temporizador.innerHTML = param;
+            elementos.temporizadorResponsive.innerHTML = param;
+            
             //Si el parametro es menor o igual a cinco muestra una animación
             if(param <= 5){
                 elementos.temporizador.style.animation = 'flash 1.5s infinite linear';
+                elementos.temporizadorResponsive.style.animation = 'flash 1.5s infinite linear';
             }
         }else{
             // //Oculta el boton de jugar
             btnReiniciar();
             //Muestra el 0 en pantalla cuando el contador llega a 0
             elementos.temporizador.innerHTML = 0;
+            elementos.temporizadorResponsive.innerHTML = 0;
             //Detiene la animación cuando llega a 0
             elementos.temporizador.style.animation = 'flashNo 1.5s infinite linear';
+            elementos.temporizadorResponsive.style.animation = 'flashNo 1.5s infinite linear';
             //Detiene el intervalo de tiempo
             clearInterval(temporizadorCorriendo);
             //Se eliminan las cartas si el contador llega a 0
@@ -67,6 +72,10 @@ export const mostrarTiempo = tiempo => {
             mostrarIconoTriste();
             //Muestra el mensaje de que perdiste y tu puntaje
             mostrarMensajesPerder();
+            //Muestra el btn de reiniciar responsivo
+            btnResponsivo();
+
+
         }
         
     }
@@ -77,6 +86,7 @@ export const mostrarTiempo = tiempo => {
 //Funcipon que desactiva el temporizador
 export const desactivarTemporizador = () => {
     elementos.temporizador.style.animation = 'flashNo 1.5s infinite linear';
+    elementos.temporizadorResponsive.style.animation = 'flashNo 1.5s infinite linear';
     clearInterval(temporizadorCorriendo);
 
 }

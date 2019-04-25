@@ -23,10 +23,16 @@
             top: 50%;
             transform: translateY(-50%);
             visibility: hidden;
+            width: 80%;
 
             &:focus{
                 outline: none;
             }
+        }
+
+        &--responsive {
+            grid-area: btn;
+            font-size: 1.5rem;
         }
         
         &--activo{
@@ -36,6 +42,21 @@
         &:focus{
             outline: none;
         }
+
+    }
+
+    &--reiniciar {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 30%;
+        font-size: 1.2rem;
+        margin-right: 2rem;
+        background: transparent;
+        color: $color-blanco;
+        border: .2rem solid $color-blanco;
+        display: none;
 
     }
 }

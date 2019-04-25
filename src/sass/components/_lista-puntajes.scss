@@ -6,6 +6,15 @@
     @include responsive(tab-land){
         padding: 0;
     }
+
+    &--responsive {
+        display: none;
+        @include responsive(tab-port){
+            grid-area: puntajes;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+    }
     
     &__items {
         padding: 1rem 2rem;
@@ -14,6 +23,14 @@
         font-size: 1.6rem;
         font-weight: 300;
         animation: fadeInRight .4s linear;
+        @include responsive(tab-port){
+            font-size: 1.2rem;
+        }
+
+        @include responsive(tab-port){
+            margin-top: 1.5rem !important;
+        }
+
         & a {
             text-decoration: none;
             padding: 2px;
@@ -33,6 +50,10 @@
     }
     &__items:not(:first-child){
         margin-top: 2rem;
+
+        @include responsive(tab-port){
+            margin-top: 0;
+        }
         
     }
 }

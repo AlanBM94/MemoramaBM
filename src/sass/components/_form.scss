@@ -27,6 +27,18 @@
         align-content: center;
         text-align: center;
         color: $color-verde-primario;
+
+        &--responsive {
+            height: 50%;
+            grid-area: nombre;
+            width: 60%;
+            color: $color-blanco;
+            font-size: 1.3rem;
+            &::placeholder {
+                color: $color-blanco !important;
+                // margin-bottom: 1px;
+            }
+        }
         
         &::placeholder {
             color: $color-verde-primario;
@@ -36,6 +48,16 @@
         
         &__tiempo {
             position: relative;
+            &--responsive {
+                grid-area: tiempo;
+                width: 60%;
+                
+                
+                &__select {
+                    background: $color-verde-gradiente !important;
+                    color: white !important;
+                }
+            }
             
             & select {
                 background: $color-verde-select;
@@ -47,9 +69,9 @@
                 position: relative;
                 width: 100%;
                 
-                // @include responsive(tab-port){
-                //     font-size: 1.2rem;
-                // }
+                @include responsive(tab-port){
+                    font-size: 1.3rem;
+                }
             }
             
             &:after {

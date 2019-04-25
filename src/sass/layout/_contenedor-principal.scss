@@ -4,6 +4,10 @@
     grid-template-rows: [inicio-nombre] 10% [fin-nombre inicio-formulario] 35% [fin-formulario inicio-tiempo] 35% [fin-tiempo inicio-btn-jugar] 20% [final-btn-jugar];
     justify-items: center;
 
+    @include responsive(tab-port){
+        display: none;
+    }
+
     &__titulo {
         @include centrarGridItems;
         width: 80%;

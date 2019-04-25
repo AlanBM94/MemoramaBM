@@ -9,6 +9,20 @@
     <title>MemoramaBM</title>
 </head>
 <body id="main">
+    <!-- Menú responsivo -->
+    <div class="menu-responsivo">
+        <h1 class="menu-responsivo__titulo">memorama</h1>
+        <input type="checkbox" class="menu-responsivo__input" id="navi-toggle">
+        <label for="navi-toggle" class="menu-responsivo__btn">
+            <span class="menu-responsivo__icono">&nbsp;</span>
+        </label>
+        <!-- Contenedor del menú -->
+        <div class="menu-responsivo__contenedor">
+
+            
+        </div>
+        <button class="btn btn--reiniciar btn--reiniciar--responsive">reiniciar</button>
+    </div>
     <!-- Menú principal -->
     <div class="contenedor-principal">
         <div class="contenedor-principal__titulo">
@@ -28,9 +42,10 @@
                 </div>
             </form>
         </div>
-        <div class="contenedor-principal__temporizador">
-            <h2 class="temporizador">0</h2>
+        <div class="contenedor-principal__temporizador ">
+            <h2 class="temporizador ">0</h2>
         </div>
+       
         <div class="contenedor-principal__boton">
             <button class="btn btn--jugar">jugar</button>
             <button class="btn btn--jugar--2">reiniciar</button>
@@ -387,6 +402,13 @@
 
         </div> -->
     </div>
+    <!-- Elementos de el juego Responsivo -->
+    <h2 class="temporizador temporizador--responsive">0</h2>
+    <ul class="lista-puntajes lista-puntajes--responsive">
+        <!-- <li class="lista-puntajes__items">Alan-<span>2000</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li>
+        <li class="lista-puntajes__items">Pablo-<span>1800</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li>
+        <li class="lista-puntajes__items">Sus-<span>1700</span><a href="#popup">&#9737;</a><a href="#">&#215;</a></li> -->
+    </ul>
     
 </body>
 </html>

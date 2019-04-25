@@ -1,0 +1,100 @@
+.menu-responsivo {
+    height: 6rem;
+    width: 100%;
+    background-color: $color-verde-primario;
+    grid-area: header;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    
+    &__icono {
+        // display: none;
+        position: relative;
+        margin-right: 2rem;
+        &,
+        &::before,
+        &::after {
+            width: 2.5rem;
+            height: 2px;
+            background-color: $color-blanco;
+            display: inline-block;
+        }
+
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -.8rem; }
+        &::after { top: .8rem; }
+    
+    }
+    
+    @include responsive(tab-port){
+        display: flex;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    
+    &__input:checked + &__btn &__icono {
+        background-color: transparent;
+    }
+    
+    &__input:checked + &__btn &__icono::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    
+    &__input:checked + &__btn &__icono::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+    &__input:checked ~ &__contenedor{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    @include responsive(tab-port){
+        
+    }
+
+    &__titulo {
+        color: $color-blanco;
+        font-size: 2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-left: 2rem;
+        visibility: hidden;
+        @include responsive(tab-port){
+            visibility: visible;
+        }
+    }
+
+    &__contenedor {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-verde-gradiente;
+        transition: all .3s;
+        transform: translateX(-100%);
+        opacity: 0;
+        display: grid;
+        grid-template-areas: 
+        'nombre btn'
+        'tiempo btn';
+        align-items: center;
+        justify-items: center;
+       
+    }
+}

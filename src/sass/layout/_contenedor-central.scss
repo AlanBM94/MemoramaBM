@@ -3,15 +3,30 @@
     display: grid;
     grid-template-rows: [inicio-cartas] 60% [fin-cartas inicio-gop] 15% [fin-gop inicio-puntaje] 15% [fin-puntaje];
     justify-items: center;
+
+    @include responsive(tab-port){
+        display: grid;
+        grid-template-rows: 90%;
+        grid-area: cartas;
+        
+    }
+
+
     &__contenedor-cartas {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-auto-rows: minmax(5rem, auto);
         padding: 1rem;
         width: 100%;
         justify-items: center;
         align-items: center;
         position: relative;
+
+        @include responsive(tab-port){
+            grid-template-columns: repeat(4, 1fr);
+            height: 90%;
+            width: 90%;
+        }
+
         
     }
 
@@ -19,11 +34,23 @@
     &__puntaje {
         width: 50%;
         @include centrarGridItems;
+        @include responsive(tab-port){
+        //      width: 62%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        margin-top: -3rem;
+        width: 80%;
+        }
     }
 
     &__gop {
         width: 50%;
         @include centrarGridItems;
+        @include responsive(tab-port){
+            // grid-area: cartas;
+        }
         
     }
 }
